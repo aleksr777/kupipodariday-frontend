@@ -49,6 +49,7 @@ export const GiftPage = ({ extraClass = "" }) => {
       .then(() => {
         handlePopupClose();
         getCard(id).then((res) => {
+          console.log(res)
           setWishData(res);
         });
       })
@@ -142,8 +143,8 @@ export const GiftPage = ({ extraClass = "" }) => {
           <h2 className="text text_ty-e_h2">Список поддержавших</h2>
         </div>
         {wishData?.offers?.length ? (
-          wishData?.offers?.map(({ name, amount, createdAt }) => (
-            <UserSupportedCard name={name} amount={amount} date={createdAt} />
+          wishData?.offers?.map(({ name, amount, createdAt }, index) => (
+            <UserSupportedCard key={index} name={name} amount={amount} date={createdAt} />
           ))
         ) : (
           <p>Пока никого нет</p>
