@@ -49,7 +49,6 @@ export const GiftPage = ({ extraClass = "" }) => {
       .then(() => {
         handlePopupClose();
         getCard(id).then((res) => {
-          console.log(res)
           setWishData(res);
         });
       })
