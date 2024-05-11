@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 import styles from "./user-supported-card.module.css";
 
 export const UserSupportedCard = ({
-  name,
+  name = "",
   img,
   amount,
   date,
