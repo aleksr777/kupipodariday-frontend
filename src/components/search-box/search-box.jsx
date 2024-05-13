@@ -7,7 +7,7 @@ import styles from "./search-box.module.css";
 export const SearchBox = ({
   search,
   setSearch,
-  placeholder = "Подарок 1",
+  placeholder = "Желание",
   extraClass = "",
 }) => {
   const [currentSearch, setCurrentSearch] = React.useState("");

@@ -199,7 +199,7 @@ const CollectionAddModal = ({
         onSubmit={submitCollection}
         ref={formRef}
       >
-        <h2 className="text text_type_h2 mb-16">Добавить подарок</h2>
+        <h2 className="text text_type_h2 mb-16">Добавить желание</h2>
         <Input
           type="text"
           id={20}

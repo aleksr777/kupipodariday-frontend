@@ -26,7 +26,7 @@ export const Subheader = ({ path, isLogin }) => {
       <h1
         className={`text text_type_h1 text_color_primary mb-16 ${styles.title}`}
       >
-        Подарки
+        Желания
       </h1>
       <div className={styles.tabs}>
         <Button

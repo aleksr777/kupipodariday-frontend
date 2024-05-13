@@ -86,7 +86,7 @@ export const GiftPage = ({ extraClass = "" }) => {
       <ButtonReturn />
       <h1 className="text text_type_h1 mb-16">{wishData.name}</h1>
       <div className={styles.data_box}>
-        <img className={styles.img} src={wishData.image} alt="Фото подарка." />
+        <img className={styles.img} src={wishData.image} alt="Фото желания." />
         <div className={styles.gift_data}>
           <h2 className="text text_type_h1 mb-16">{`${wishData.price} руб.`}</h2>
 
@@ -129,7 +129,7 @@ export const GiftPage = ({ extraClass = "" }) => {
             <Button
               type="button"
               kind="support"
-              text="Добавить в вишлист"
+              text="Добавить в мой вишлист"
               extraClass={styles.btn}
               onClick={handleCopyClick}
               disabled={isAddToWishDisabled}

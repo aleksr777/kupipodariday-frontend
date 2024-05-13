@@ -91,7 +91,7 @@ export const WishlistPage = ({ extraClass = "" }) => {
               <Modal onClose={handlePopupClose} extraClass={styles.modal}>
                 <div className={styles.popup}>
                   <p className="text text_type_main mb-10">
-                    Удалить выбранные подарки?
+                    Удалить выбранные желания?
                   </p>
                   <div className={styles.popup_btn_box}>
                     <Button

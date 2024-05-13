@@ -30,7 +30,7 @@ export const GoodCard = ({
       onClick={onClick}
     >
       <Link to={`/gift/${id}`} className={styles.img_box}>
-        <img className={styles.img} src={img} alt="Фото товара." />
+        <img className={styles.img} src={img} alt="Фото желания." />
       </Link>
       <div className={styles.data_box}>
         <p
@@ -47,7 +47,7 @@ export const GoodCard = ({
         {pathname !== "/wishlist" && (
           <Button
             extraClass={styles.btn}
-            text="Добавить в вишлист"
+            text="Добавить в мой вишлист"
             type="button"
             kind="additional"
             onClick={handleCopyClick}

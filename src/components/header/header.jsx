@@ -67,7 +67,7 @@ export const Header = ({ extraClass = "" }) => {
       <Button
         type="button"
         kind="primary"
-        text={`${isLoggedIn ? "Добавить подарок" : "Войти в профиль"}`}
+        text={`${isLoggedIn ? "Добавить желание" : "Войти в профиль"}`}
         onClick={onSubmit}
       />
       {isProfilePopupOpen && (
@@ -91,8 +91,8 @@ const HeaderLinks = ({ handleProfilePopupOpen, userName }) => {
     <ul className={styles.nav_box}>
       <li className={styles.nav_link}>
         <NavLink className={setInactive} to="/gifts/line">
-          <img src={giftIcon} alt="Иконка подарков." />
-          <p className="text text_type-main text_color_primary ml-3">Подарки</p>
+          <img src={giftIcon} alt="Иконка желаний." />
+          <p className="text text_type-main text_color_primary ml-3">Желания</p>
         </NavLink>
       </li>
       <li className={styles.nav_link}>
@@ -145,15 +145,15 @@ const GiftAddModal = ({ onClose }) => {
   return (
     <Modal onClose={onClose} extraClass={styles.gift_modal} isCloseBtn={true}>
       <form className={styles.gift_form} onSubmit={submitGift} ref={formRef}>
-        <h2 className="text text_type_h2 mb-16">Добавить подарок</h2>
+        <h2 className="text text_type_h2 mb-16">Добавить желание</h2>
         <Input
           type="text"
           id={20}
           extraClass="mb-12"
-          label="Название подарка"
+          label="Название желания"
           name="name"
           onChange={onFormChange}
-          placeholder="Укажите название подарка"
+          placeholder="Укажите название желания"
           required
         />
         <Input
@@ -169,7 +169,7 @@ const GiftAddModal = ({ onClose }) => {
           type="url"
           extraClass="mb-12"
           name="image"
-          label="Ссылка на изображение подарка"
+          label="Ссылка на изображение желания"
           onChange={onFormChange}
           placeholder="Укажите ссылку"
           required
@@ -178,7 +178,7 @@ const GiftAddModal = ({ onClose }) => {
           name="description"
           id={23}
           placeholder="Несколько слов о вашем желании"
-          label="Расскажите о вашем подарке"
+          label="Расскажите о вашем желании"
           onChange={onFormChange}
           maxLength={1024}
           required
@@ -188,7 +188,7 @@ const GiftAddModal = ({ onClose }) => {
           name="price"
           id={24}
           extraClass={`mb-16 ${styles.price_input}`}
-          label="Стоимость подарка (руб.)"
+          label="Стоимость желания (руб.)"
           onChange={onFormChange}
           placeholder="Укажите стоимость"
           required
@@ -197,7 +197,7 @@ const GiftAddModal = ({ onClose }) => {
         <Button
           type="submit"
           extraClass={styles.gift_btn}
-          text="Добавить подарок"
+          text="Добавить желание"
           kind="secondary"
           disabled={!valid}
         />
