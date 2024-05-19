@@ -8,6 +8,8 @@ import { priceArr } from "../../utils/constants";
 
 import { addOffer, getCard, copyWish, getOwnWishes } from "../../utils/api";
 
+import PictureAdaptable from "../picture-adaptable/picture-adaptable";
+
 import styles from "./gift-page.module.css";
 
 export const GiftPage = ({ extraClass = "" }) => {
@@ -85,8 +87,16 @@ export const GiftPage = ({ extraClass = "" }) => {
     <section className={`${styles.content} ${extraClass}`}>
       <ButtonReturn />
       <h1 className="text text_type_h1 mb-16">{wishData.name}</h1>
+
       <div className={styles.data_box}>
-        <img className={styles.img} src={wishData.image} alt="Фото желания." />
+        
+        <div className={styles.picture_box}>
+          <PictureAdaptable
+            path={wishData.image}
+            altText={"Фото желания."}
+          />
+        </div>
+
         <div className={styles.gift_data}>
           <h2 className="text text_type_h1 mb-16">{`${wishData.price} руб.`}</h2>
 
@@ -143,12 +153,12 @@ export const GiftPage = ({ extraClass = "" }) => {
         </div>
         {wishData?.offers?.length ? (
           wishData?.offers?.map(({ user, amount, createdAt }, index) => (
-            <UserSupportedCard 
-              key={index} 
-              name={user.username} 
-              amount={amount} 
-              date={new Date(createdAt).toLocaleDateString()} 
-              img={user.avatar} 
+            <UserSupportedCard
+              key={index}
+              name={user.username}
+              amount={amount}
+              date={new Date(createdAt).toLocaleDateString()}
+              img={user.avatar}
             />
           ))
         ) : (
@@ -175,7 +185,7 @@ export const GiftPage = ({ extraClass = "" }) => {
                     text={`${item} руб`}
                     kind={
                       currentSupportedBtn === item ||
-                      currentSupportedBtn === anotherSum
+                        currentSupportedBtn === anotherSum
                         ? "primary"
                         : "support"
                     }

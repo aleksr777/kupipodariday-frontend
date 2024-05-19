@@ -28,7 +28,7 @@
   --scrollbar-color: var(--scroll-track-color) var(--logout-btn-border);
   --scrollbar-width: thin;
 
-  --common-transition: all 0.3s ease-in;
+  --common-transition: all 0.4s ease 0s;
 }
 
 @-moz-document url-prefix() {
@@ -122,7 +122,7 @@ body {
   font-family: "Inter", sans-serif;
   font-style: normal;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 15px;
   line-height: 24px;
 }
 

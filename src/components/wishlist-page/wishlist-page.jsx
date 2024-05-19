@@ -14,6 +14,7 @@ import styles from "./wishlist-page.module.css";
 export const WishlistPage = ({ extraClass = "" }) => {
   const [currentCardsId, setCurrentCardsId] = useState([]);
   const [data, setOwnWishes] = useState([]);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const [isPopupOpen, setIsPopupOpen] = useState(false);
 
@@ -51,13 +52,19 @@ export const WishlistPage = ({ extraClass = "" }) => {
   };
 
   const handleRemoveCards = () => {
-    Promise.all(currentCardsId.map((id) => removeWish(id).catch())).then(() => {
-      getOwnWishes().then((res) => {
-        setCurrentCardsId([]);
-        setOwnWishes(res);
-        handlePopupClose();
-      });
-    });
+    Promise.all(currentCardsId.map((id) => removeWish(id)
+      .catch()))
+      .then(() => {
+        getOwnWishes()
+          .then((res) => {
+            setCurrentCardsId([]);
+            setOwnWishes(res);
+            handlePopupClose();
+          });
+      })
+      .catch((err) => {
+        setErrorMessage(err.message);
+      })
   };
 
   return (
@@ -109,6 +116,9 @@ export const WishlistPage = ({ extraClass = "" }) => {
                       text="Удалить"
                     />
                   </div>
+                  {errorMessage && (
+                    <p className={styles.error}>{errorMessage}</p>
+                  )}
                 </div>
               </Modal>
             )}

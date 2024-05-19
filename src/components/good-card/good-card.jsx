@@ -1,10 +1,8 @@
 import React from "react";
 import { useLocation, Link, useHistory } from "react-router-dom";
-
 import { Button, LoadingBox } from "../ui";
-
 import { copyWish } from "../../utils/api";
-
+import PictureAdaptable from "../picture-adaptable/picture-adaptable";
 import styles from "./good-card.module.css";
 
 export const GoodCard = ({
@@ -29,8 +27,13 @@ export const GoodCard = ({
       className={`${styles.content} ${extraClass}`}
       onClick={onClick}
     >
-      <Link to={`/gift/${id}`} className={styles.img_box}>
-        <img className={styles.img} src={img} alt="Фото желания." />
+      <Link to={`/gift/${id}`} className={styles.img_box} draggable={false}>
+
+        <PictureAdaptable
+          path={img}
+          altText={"Фото желания."}
+        />
+
       </Link>
       <div className={styles.data_box}>
         <p

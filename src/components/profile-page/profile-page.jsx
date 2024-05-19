@@ -5,6 +5,8 @@ import { Button, Input, Textarea } from "../ui";
 
 import { updateProfile, refreshUser } from "../../utils/api";
 
+import PictureAdaptable from "../picture-adaptable/picture-adaptable";
+
 import {
   MAXIMUM_DESCRIPTION_LENGTH,
   MAXIMUM_USERNAME_LENGTH,
@@ -94,7 +96,10 @@ export const ProfilePage = ({ extraClass = "" }) => {
       <form className={styles.form} onSubmit={submitFormData}>
         <label htmlFor="image" className={styles.img_box}>
           <div className={styles.avatar}>
-            <img className={styles.img} src={userCtx.avatar} />
+          <PictureAdaptable
+            path={userCtx.avatar}
+            altText={"Аватарка."}
+          />
           </div>
         </label>
         <Input
